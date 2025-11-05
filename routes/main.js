@@ -1,5 +1,3 @@
-var shopData = {shopName: "The Thirsty Student", 
-                productCategories:["Beer", "Wine", "Soft Drinks", "Hot Drinks"]}
 
 
 // Create a new router
@@ -8,6 +6,10 @@ const router = express.Router();
 
 // Define our data
 var shopData = { shopName: "The Steak Shop" };
+
+var shopData = {shopName: "The Thirsty Student", 
+                productCategories:["Beer", "Wine", "Soft Drinks", "Hot Drinks"]}
+
 
 // Handle the main routes
 router.get("/", (req, res) => {
