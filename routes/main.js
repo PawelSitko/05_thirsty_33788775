@@ -1,15 +1,12 @@
-
-
 // Create a new router
 const express = require("express");
 const router = express.Router();
 
-// Define our data
-var shopData = { shopName: "The Steak Shop" };
-
-var shopData = {shopName: "The Thirsty Student", 
-                productCategories:["Beer", "Wine", "Soft Drinks", "Hot Drinks"]}
-
+// Define our shop data
+var shopData = {
+  shopName: "The Steak Shop",
+  productCategories: ["Ribeye", "Sirloin", "T-Bone", "Fillet", "Rump"]
+};
 
 // Handle the main routes
 router.get("/", (req, res) => {
@@ -17,7 +14,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/about", (req, res) => {
-  res.render("about.ejs",shopData );
+  res.render("about.ejs", shopData);
 });
 
 router.get("/search", (req, res) => {
