@@ -1,3 +1,7 @@
+var shopData = {shopName: "The Thirsty Student", 
+                productCategories:["Beer", "Wine", "Soft Drinks", "Hot Drinks"]}
+
+
 // Create a new router
 const express = require("express");
 const router = express.Router();
