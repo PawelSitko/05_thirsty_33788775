@@ -33,7 +33,7 @@ router.get("/register", (req, res) => {
 
 // Handle form submission from register page (POST)
 router.post("/registered", (req, res) => {
-  res.send("Hello " + req.body.first + " " + req.body.last + ", you are now registered!");
+  res.send("Hello " + req.body.first + " " + req.body.last + ", you are now registered! We will now send an email confirmation to you at " + req.body.email+ "");
 });
 
 // Export the router object so index.js can access it
