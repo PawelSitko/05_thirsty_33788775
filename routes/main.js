@@ -21,19 +21,19 @@ router.get("/search", (req, res) => {
   res.render("search.ejs", shopData);
 });
 
-// Show search result (GET version)
-router.get('/search_result', (req, res) => {
-  res.send('Hello ' + req.query.first + ' ' + req.query.last + ', you are now registered!');
+// Handle search result (GET method)
+router.get("/search_result", (req, res) => {
+  res.send("You searched for " + req.query.search_text + " in " + req.query.category);
 });
 
-// Show the register page
+// Show the register page (GET)
 router.get("/register", (req, res) => {
   res.render("register.ejs", shopData);
 });
 
-// Handle form submission from register page (POST version)
+// Handle form submission from register page (POST)
 router.post("/registered", (req, res) => {
-  res.send(req.body);
+  res.send("Hello " + req.body.first + " " + req.body.last + ", you are now registered!");
 });
 
 // Export the router object so index.js can access it
