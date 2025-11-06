@@ -1,23 +1,35 @@
 <!doctype html> 
 <html>  
   <head>  
+    <!-- link to shared stylesheet for page styling -->
     <link rel="stylesheet" href="/style.css">
-    <title><%=shopName%></title> 
+
+    <!-- set the page title using the shop name -->
+    <title><%= shopName %></title> 
   </head>  
+
   <body>  
+    <!-- include the shared header (e.g., navigation bar) -->
     <%- include('partials/header') %>
 
+    <!-- main page heading -->
     <h1>Welcome to <%= shopName %></h1>
 
+    <!-- heading for the register page -->
+    <h1>This is the register page</h1> 
 
-    <h1> This is the register page </h1> 
+    <!-- form that sends user data to the /registered route using POST -->
     <form method="POST" action="/registered"> 
-        First Name:<input id="first" type="text" name="first"/> 
-        Last Name:<input id="last" type="text" name="last" /> 
-
+        <!-- input fields for user details -->
+        First Name: <input id="first" type="text" name="first"/> 
+        Last Name: <input id="last" type="text" name="last" /> 
         Email: <input type="email" name="email" required>
+
+        <!-- submit button -->
         <input type="submit" value="OK" /> 
     </form> 
+
+    <!-- include the shared footer (bottom of page layout) -->
     <%- include('partials/footer') %>
-</body>  
+  </body>  
 </html> 

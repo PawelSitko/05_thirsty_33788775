@@ -1,28 +1,41 @@
 <!doctype html>
 <html>
   <head>
+    <!--external css-->
     <link rel="stylesheet" href="/style.css">
+    
+    <!--set the page title dynamically using the shopName variable -->
     <title><%= shopName %></title>
   </head>
   <body>
+    <!-- include the header partial (likely contains navigation or logo) -->
     <%- include('partials/header') %>
 
+    <!-- display a welcome message with the shop name -->
     <h1>Welcome to <%= shopName %></h1>
 
+    <!-- include the footer partial  -->
     <%- include('partials/footer') %>
 
+    <!-- search form -->
     <form action="/search_result" method="GET">
+      <!-- input for search text -->
       <label for="search_box">Search:</label>
       <input id="search_box" type="text" name="search_text">
 
+      <!-- input for category filter -->
       <label for="category">Category:</label>
       <input id="category" type="text" name="category">
 
+      <!-- submit button -->
       <input type="submit" value="OK">
     </form>
 
+    
     <h1>Search bar for <%= shopName %></h1>
     <p>We sell all sorts of drinks</p>
+
+    <!-- footer -->
     <%- include('partials/footer') %>
   </body>
 </html>

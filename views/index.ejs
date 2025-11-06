@@ -1,23 +1,31 @@
 <!doctype html>
 <html>
   <head>
+    <!-- link to shared CSS file -->
     <link rel="stylesheet" href="/style.css">
+    <!-- page title with dynamic shop name -->
     <title>Welcome to <%= shopName %></title>
   </head>
+
   <body>
+    <!--header added-->
     <%- include('partials/header') %>
 
+    <!--main heading -->
     <h1>Welcome to <%= shopName %></h1>
 
-
-
+    <!--shop name and product list -->
     <h1><%= shopName %></h1>
     <h2>Here are some things that we sell:</h2>
+
+    <!--loop through product categories and display each one -->
     <ul>
       <% for(let i = 0; i < productCategories.length; i++) { %>
         <li><%= productCategories[i] %></li>
       <% } %>
     </ul>
+
+    <!-- footer -->
     <%- include('partials/footer') %>
   </body>
 </html>

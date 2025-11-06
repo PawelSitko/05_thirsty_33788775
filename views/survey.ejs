@@ -1,36 +1,56 @@
+<!-- header added-->
 <%- include('partials/header') %>
 
+<!-- page title -->
 <h1>Customer Survey</h1>
 <p>Please complete the short survey below:</p>
 
+<!-- survey form: sends POST data to /survey_result route -->
 <form method="POST" action="/survey_result">
+  
+  <!-- first name input -->
   <label for="first">First name:</label>
-  <input type="text" id="first" name="first" required><br><br>
+  <input type="text" id="first" name="first" required>
+  <br><br>
 
+  <!-- surname input -->
   <label for="last">Surname:</label>
-  <input type="text" id="last" name="last" required><br><br>
+  <input type="text" id="last" name="last" required>
+  <br><br>
 
+  <!-- email input with validation -->
   <label for="email">Email address:</label>
-  <input type="email" id="email" name="email" required><br><br>
+  <input type="email" id="email" name="email" required>
+  <br><br>
 
+  <!-- age input -->
   <label for="age">How old are you?</label>
-  <input type="text" id="age" name="age"><br><br>
+  <input type="text" id="age" name="age">
+  <br><br>
 
+  <!-- drink category question -->
   <h3>Which of the following drink categories do you consume?</h3>
+  
+  <!-- dynamically generate radio buttons for each product category -->
   <% for (let i = 0; i < productCategories.length; i++) { %>
     <label>
       <input type="radio" name="drink" value="<%= productCategories[i] %>">
       <%= productCategories[i] %>
-    </label><br>
+    </label>
+    <br>
   <% } %>
   <br>
 
+  <!-- checkbox asking if the user is a student -->
   <label>
     <input type="checkbox" name="student" value="yes">
     Are you a student?
-  </label><br><br>
+  </label>
+  <br><br>
 
+  <!-- submit button for the survey -->
   <input type="submit" value="Submit Survey">
 </form>
 
+<!-- footer added -->
 <%- include('partials/footer') %>
