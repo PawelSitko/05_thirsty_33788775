@@ -1,9 +1,16 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" href="/style.css">
     <title><%= shopName %></title>
   </head>
   <body>
+    <%- include('partials/header') %>
+
+    <h1>Welcome to <%= shopName %></h1>
+
+    <%- include('partials/footer') %>
+
     <form action="/search_result" method="GET">
       <label for="search_box">Search:</label>
       <input id="search_box" type="text" name="search_text">
@@ -16,5 +23,6 @@
 
     <h1>Search bar for <%= shopName %></h1>
     <p>We sell all sorts of drinks</p>
+    <%- include('partials/footer') %>
   </body>
 </html>

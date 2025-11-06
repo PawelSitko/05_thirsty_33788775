@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<h1>Survey Results</h1>
+<p>Thank you, <%= first %> <%= last %>, for completing the survey!</p>
+
+<ul>
+  <li><strong>Email:</strong> <%= email %></li>
+  <li><strong>Age:</strong> <%= age %></li>
+  <li><strong>Favourite drink category:</strong> <%= drink %></li>
+  <li><strong>Are you a student?:</strong> <%= student %></li>
+</ul>
+
+<a href="/survey">Back to Survey</a>
+
+<%- include('partials/footer') %>
