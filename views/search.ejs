@@ -1,14 +1,20 @@
 <!doctype html>
 <html>
   <head>
-    <title><%=shopName%></title>
+    <title><%= shopName %></title>
   </head>
   <body>
     <form action="/search_result" method="GET">
+      <label for="search_box">Search:</label>
       <input id="search_box" type="text" name="search_text">
-      <input type="submit" value="OK" >
+
+      <label for="category">Category:</label>
+      <input id="category" type="text" name="category">
+
+      <input type="submit" value="OK">
     </form>
-    <h1>Search bar for <%=shopName%></h1>
+
+    <h1>Search bar for <%= shopName %></h1>
     <p>We sell all sorts of drinks</p>
   </body>
 </html>
