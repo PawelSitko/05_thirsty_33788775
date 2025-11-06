@@ -8,6 +8,14 @@ var shopData = {
   productCategories: ["Ribeye", "Sirloin", "T-Bone", "Fillet", "Rump"]
 };
 
+// Set up the body parser 
+app.use(express.urlencoded({ extended: true })); 
+
+// Load the route handlers
+const mainRoutes = require("./routes/main");  
+app.use('/', mainRoutes);
+
+
 // Handle the main routes
 router.get("/", (req, res) => {
   res.render("index.ejs", shopData);
@@ -22,8 +30,16 @@ router.get("/search", (req, res) => {
 });
 
 router.get('/search_result', function (req, res) {
-    res.send("You searched for " + req.query.search_text + " in " + req.query.category);
+    res.send(' Hello '+ req.body.first + ' '+ req.body.last +' you are now registered!');   
  });
+
+router.get("/register", (req,res) => {
+    res.render("register.ejs",  shopData); 
+}); 
+ 
+router.post("/registered", (req,res) => { 
+  res.send(req.body) 
+}); 
 
 
 // Export the router object so index.js can access it
